@@ -1,5 +1,6 @@
 package com.enble.model;
 
+import com.enble.presenter.BasePresenter;
 import com.enble.presenter.MainViewPresenter;
 
 import java.io.*;
@@ -11,9 +12,9 @@ import java.util.ArrayList;
  */
 public class ModelCompl implements Model {
 
-    private MainViewPresenter mPresenter;
+    private BasePresenter mPresenter;
 
-    public ModelCompl(MainViewPresenter presenter) {
+    public ModelCompl(BasePresenter presenter) {
         this.mPresenter = presenter;
     }
     @Override

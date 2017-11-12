@@ -2,7 +2,10 @@ package com.enble;
 
 import com.enble.model.Activity;
 import com.enble.model.ModelCompl;
+import com.enble.model.SortedMethod;
+import com.enble.presenter.AdminViewPresenterCompl;
 import com.enble.presenter.MainViewPresenterCompl;
+import com.enble.view.AdminViewCompl;
 import com.enble.view.MainViewCompl;
 
 import java.io.*;
@@ -26,5 +29,9 @@ public class MainClass {
         view.showTargetActivityByName("鬼步教学");
         view.showTargetActivityByName("一起来女装");
 
+        AdminViewCompl admainView = new AdminViewCompl();
+        admainView.showMemberOrderByShetuanName("文学社");
+        admainView.showSortedShetuan(SortedMethod.MemberNum);
+        admainView.addMessageToActivity("送一双滑板鞋", "鬼步教学");
     }
 }

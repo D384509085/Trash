@@ -3,7 +3,7 @@ package com.enble.model;
 /**
  * Created by Administrator on 2017/11/11 0011.
  */
-public class Activity implements Comparable<Activity>{
+public class Activity {
 
     private String activityName;
     private String startTime;
@@ -11,6 +11,7 @@ public class Activity implements Comparable<Activity>{
     private String hostShetuan;
     private String headline;
     private String remark;
+    private String addedMsg;
 
     public Activity(String activityName, String startTime, String place, String host, String headline, String remark) {
         this.activityName = activityName;
@@ -69,9 +70,12 @@ public class Activity implements Comparable<Activity>{
         this.remark = remark;
     }
 
-    @Override
-    public int compareTo(Activity o) {
-        return 0;
+    public String getAddedMsg() {
+        return addedMsg;
+    }
+
+    public void setAddedMsg(String addedMsg) {
+        this.addedMsg = addedMsg;
     }
 
     @Override

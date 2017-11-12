@@ -50,7 +50,8 @@ public class MainViewPresenterCompl implements MainViewPresenter{
                 return shetuan;
             }
         }
-        System.out.println("未找到目标社团"+targetShetuanName);
+        System.out.println("未找到目标社团:"+targetShetuanName);
+        System.out.println();
         return null;
     }
 
@@ -62,7 +63,8 @@ public class MainViewPresenterCompl implements MainViewPresenter{
                 return activity;
             }
         }
-        System.out.println("未找到目标活动"+targetActivityName);
+        System.out.println("未找到目标活动:"+targetActivityName);
+        System.out.println();
         return null;
     }
 }

@@ -5,16 +5,17 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2017/11/11 0011.
  */
-public class Shetuan {
+public class Shetuan implements Comparable<Shetuan>{
 
+    public static SortedMethod mSortedMethod = SortedMethod.ActivityNum;
     private String ShetuanName;
     private String createTime;
     private String mainPersonName;
     private Person mainPerson;
     private String phoneNumber;
     private String email;
-    private ArrayList<String> ShetuanMemberName;
-    private ArrayList<Person> ShetuanMember;
+    private ArrayList<String> shetuanMemberName;
+    private ArrayList<Person> shetuanMember;
     private ArrayList<Activity> contentActivity;
     private ArrayList<String> contentActivityName;
     private String shetuanHeadline;
@@ -26,7 +27,7 @@ public class Shetuan {
         this.mainPersonName = mainPersonName;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        ShetuanMemberName = shetuanMemberName;
+        this.shetuanMemberName = shetuanMemberName;
         this.contentActivityName = contentActivityName;
         this.shetuanHeadline = activityHeadline;
     }
@@ -38,7 +39,7 @@ public class Shetuan {
         this.mainPerson = mainPerson;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        ShetuanMember = shetuanMember;
+        this.shetuanMember = shetuanMember;
         this.contentActivity = contentActivity;
         this.shetuanHeadline = activityHeadline;
     }
@@ -68,11 +69,11 @@ public class Shetuan {
     }
 
     public ArrayList<String> getShetuanMemberName() {
-        return ShetuanMemberName;
+        return shetuanMemberName;
     }
 
     public ArrayList<Person> getShetuanMember() {
-        return ShetuanMember;
+        return shetuanMember;
     }
 
     public ArrayList<Activity> getContentActivity() {
@@ -112,11 +113,11 @@ public class Shetuan {
     }
 
     public void setShetuanMemberName(ArrayList<String> shetuanMemberName) {
-        ShetuanMemberName = shetuanMemberName;
+        shetuanMemberName = shetuanMemberName;
     }
 
     public void setShetuanMember(ArrayList<Person> shetuanMember) {
-        ShetuanMember = shetuanMember;
+        shetuanMember = shetuanMember;
     }
 
     public void setContentActivity(ArrayList<Activity> contentActivity) {
@@ -140,8 +141,35 @@ public class Shetuan {
                 "负责人： '" + mainPersonName + '\'' + '\n'+
                 "联系电话： '" + phoneNumber + '\'' + '\n' +
                 "邮箱： '" + email + '\'' + '\n' +
-                "社团成员： " + ShetuanMemberName + '\n' +
+                "社团成员： " + shetuanMemberName + '\n' +
                 "社团活动： " + contentActivityName + '\n' +
                 "社团简介： '" + shetuanHeadline + '\'';
+    }
+
+    public static void setmSortedMethod(SortedMethod mSortedMethod) {
+        Shetuan.mSortedMethod = mSortedMethod;
+    }
+
+    @Override
+    public int compareTo(Shetuan o) {
+        switch (mSortedMethod) {
+            case ActivityNum: {
+                if (this.contentActivity.size() > o.getContentActivity().size()) {
+                    return 1;
+                } else if(this.contentActivity.size() == o.getContentActivity().size()) {
+                    return 0;
+                }
+                else return -1;
+            }
+            case MemberNum: {
+                if (this.shetuanMemberName.size() > o.getShetuanMemberName().size()) {
+                    return 1;
+                } else if(this.shetuanMemberName.size() == o.getShetuanMemberName().size()) {
+                    return 0;
+                }
+                else return -1;
+            }
+        }
+        return 0;
     }
 }

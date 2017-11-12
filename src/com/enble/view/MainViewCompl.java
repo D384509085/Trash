@@ -43,8 +43,9 @@ public class MainViewCompl implements MainView {
 
     @Override
     public void showTargetShetuanByName(String targetName) {
-        Shetuan targetShetuan = mPresenter.getTargetShetuanByName(targetName);
+        System.out.println();
         System.out.println("现在查找目标社团");
+        Shetuan targetShetuan = mPresenter.getTargetShetuanByName(targetName);
         System.out.println();
         if (targetShetuan != null) {
             System.out.println(targetShetuan.toString());
@@ -53,8 +54,9 @@ public class MainViewCompl implements MainView {
 
     @Override
     public void showTargetActivityByName(String targetActivityName) {
-        Activity targetActivity = mPresenter.getTargetActivityByName(targetActivityName);
+        System.out.println();
         System.out.println("现在查找目标活动");
+        Activity targetActivity = mPresenter.getTargetActivityByName(targetActivityName);
         if (targetActivity != null) {
             System.out.println(targetActivity.toString());
         }

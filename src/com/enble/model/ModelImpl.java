@@ -10,11 +10,11 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2017/11/11 0011.
  */
-public class ModelCompl implements Model {
+public class ModelImpl implements Model {
 
     private BasePresenter mPresenter;
 
-    public ModelCompl(BasePresenter presenter) {
+    public ModelImpl(BasePresenter presenter) {
         this.mPresenter = presenter;
     }
     @Override

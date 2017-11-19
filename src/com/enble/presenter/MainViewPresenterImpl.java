@@ -2,7 +2,7 @@ package com.enble.presenter;
 
 import com.enble.model.Activity;
 import com.enble.model.Model;
-import com.enble.model.ModelCompl;
+import com.enble.model.ModelImpl;
 import com.enble.model.Shetuan;
 import com.enble.view.MainView;
 
@@ -11,15 +11,15 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2017/11/11 0011.
  */
-public class MainViewPresenterCompl implements MainViewPresenter{
+public class MainViewPresenterImpl implements MainViewPresenter{
 
     private MainView mView;
 
     private Model mModel;
 
-    public MainViewPresenterCompl(MainView view) {
+    public MainViewPresenterImpl(MainView view) {
         mView = view;
-        mModel = new ModelCompl(this);
+        mModel = new ModelImpl(this);
     }
 
     @Override

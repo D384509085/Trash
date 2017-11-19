@@ -2,22 +2,21 @@ package com.enble.presenter;
 
 import com.enble.model.*;
 import com.enble.view.AdminView;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2017/11/12 0012.
  */
-public class AdminViewPresenterCompl implements AdminViewPresenter {
+public class AdminViewPresenterImpl implements AdminViewPresenter {
 
     private AdminView mAdminView;
 
     private Model mModel;
 
-    public AdminViewPresenterCompl(AdminView adminView) {
+    public AdminViewPresenterImpl(AdminView adminView) {
         this.mAdminView = adminView;
-        mModel = new ModelCompl(this);
+        mModel = new ModelImpl(this);
     }
 
     @Override

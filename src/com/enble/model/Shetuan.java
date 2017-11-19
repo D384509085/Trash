@@ -154,9 +154,9 @@ public class Shetuan implements Comparable<Shetuan>{
     public int compareTo(Shetuan o) {
         switch (mSortedMethod) {
             case ActivityNum: {
-                if (this.contentActivity.size() > o.getContentActivity().size()) {
+                if (this.contentActivityName.size() > o.getContentActivityName().size()) {
                     return 1;
-                } else if(this.contentActivity.size() == o.getContentActivity().size()) {
+                } else if(this.contentActivityName.size() == o.getContentActivityName().size()) {
                     return 0;
                 }
                 else return -1;
